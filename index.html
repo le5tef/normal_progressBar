@@ -1,0 +1,144 @@
+<head>
+    <link rel="stylesheet" href="price.css" type="text/css" />
+    <link rel="stylesheet" href="body.css" type="text/css" />
+    <link rel="stylesheet" href="progress.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="progress">
+        <div class="progress__body">
+            <div class="progress__buttons">
+                <div class="progress__button">
+                    <img class="progress__icon " src="./icons/11.png" />
+                    <img onclick="counter(1)" class="progress__icon whiteActivate" style="display: none;"
+                        src="./icons/1.png" />
+                    <div class="progress__bar ">
+                        <span class="progress__bar_control" style="width: 0%; height: 15px; transition: 1s; "></span>
+                    </div>
+                </div>
+                <div class="progress__button">
+                    <img class="progress__icon " src="./icons/22.png" />
+                    <img onclick="counter(2)" class="progress__icon whiteActivate" src="./icons/2.png" />
+                    <div class="progress__bar ">
+                        <span class="progress__bar_control" style="width: 0%; height: 15px; transition: 1s;"></span>
+                    </div>
+                </div>
+                <div class="progress__button">
+                    <img class="progress__icon " src="./icons/33.png" />
+                    <img onclick="counter(3)" class="progress__icon whiteActivate" src="./icons/3.png" />
+                    <div class="progress__bar ">
+                        <span class="progress__bar_control" style="width: 0%; height: 15px; transition: 1s;"></span>
+                    </div>
+                    <div class="progress__bar backBar">
+                        <span style="width: 100%; height: 15px;"></span>
+                    </div>
+                </div>
+                <div class="progress__button">
+                    <img class="progress__icon " src="./icons/44.png" />
+                    <img onclick="counter(4)" class="progress__icon whiteActivate" src="./icons/4.png" />
+                    <div class="progress__bar ">
+                        <span class="progress__bar_control" style="width: 0%; height: 15px; transition: 1s; "></span>
+                    </div>
+                </div>
+                <div class="progress__button">
+                    <img class="progress__icon  " src="./icons/55.png" />
+                    <img onclick="counter(5)" class="progress__icon whiteActivate" src="./icons/5.png" />
+                </div>
+            </div>
+        </div>
+        <div class="progress__shortTexts price_blue " style="font-weight: 100;">
+            <p class="progress__shortText ">Покупка подписки</p>
+            <p class="progress__shortText">Запрос к вашей базе данных</p>
+            <p class="progress__shortText">Обработка данных</p>
+            <p class="progress__shortText">Подготовка информации</p>
+            <p class="progress__shortText">Готовая статистика</p>
+        </div>
+        <div class="progress__prices">
+            <div class="progress__price price_blue">
+                <a class="price_title">Покупка подписки</a><br />
+                <a>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                    стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.</a>
+            </div>
+            <div class="progress__price price_blue" style="display: none;">
+                <a class="price_title">Запрос к вашей базе данных</a><br />
+                <a>В то время некий безымянный печатник создал большую коллекцию размеров и форм
+                    шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без
+                    заметных изменений
+                    пять веков, но и перешагнул в электронный дизайн.</a>
+            </div>
+            <div class="progress__price price_blue" style="display: none;">
+                <a class="price_title">Обработка данных</a><br />
+                <a>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                    стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.</a>
+            </div>
+            <div class="progress__price price_blue" style="display: none;">
+                <a class="price_title">Подготовка информации</a><br />
+                <a>В то время некий безымянный печатник создал большую коллекцию размеров и форм
+                    шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без
+                    заметных изменений
+                    пять веков, но и перешагнул в электронный дизайн.</a>
+            </div>
+            <div class="progress__price price_blue" style="display: none;">
+                <a class="price_title">Готовая статистика</a><br />
+                <a>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                    стандартной "рыбой" для
+                    текстов на латинице с начала XVI века.</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var pos = 1;
+
+    function counter(a) {
+        prevPos = pos;
+        pos = a;
+        if (pos > 5) { pos = 5 };
+        if (pos < 1) { pos = 1 };
+        const barControl = document.querySelectorAll('.progress__bar_control');
+        const barTransControl = document.querySelector('.progress__bar_control')
+        const btns = document.querySelectorAll('.whiteActivate');
+        const blocks = document.querySelectorAll('.progress__price');
+        for (let k = 0; k < btns.length; k += 1) {
+            btns[k].style.display = "block";
+            blocks[k].style.display = "none";
+        }
+        var latency = 1000,
+            k = prevPos,
+            numIterations = pos;
+        if (Math.abs(pos - prevPos) == 2) {
+            latency = 750;
+            console.log(latency);
+            barTransControl.style.transition = "0.75s";
+            barTransControl.style.transitionTimingFunction = "linear";
+        }
+        if (Math.abs(pos - prevPos) >= 3) {
+            latency = 500;
+            console.log(latency);
+            barTransControl.style.transition = "0.5s";
+            barTransControl.style.transitionTimingFunction = "linear";
+        }
+        var loop = function () {
+            if (k < numIterations) {
+                barControl[k - 1].style.width = "100%";
+                k += 1;
+                setTimeout(loop, latency);
+            }
+            if (k > numIterations) {
+                barControl[k - 2].style.width = "0%";
+                k -= 1;
+                setTimeout(loop, latency);
+            }
+        }
+        loop()
+
+        btns[pos - 1].style.display = "none";
+        blocks[pos - 1].style.display = "flex";
+    };
+    retryTimeout()
+</script>

@@ -1,0 +1,5 @@
+body{
+    background-color: #96cee4;
+    --barWidth:1000px;
+    --iconWidth:calc(var(--barWidth)/5)
+}
