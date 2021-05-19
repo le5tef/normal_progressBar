@@ -55,7 +55,7 @@
 
 @media(max-width:520px){
 .progress__price{
-    min-width: 70%;
-    min-height: 65%;
+    min-width: 80%;
+    min-height: 80%;
 };
 }
