@@ -42,7 +42,7 @@ body{
 .progress__bar_start{
   width: 0%; 
   height: 15px; 
-  transition: 750ms;
+  transition: 500ms;
 }
 .backBar{
   left: -150%;
