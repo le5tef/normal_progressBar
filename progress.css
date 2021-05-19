@@ -94,7 +94,7 @@ body{
 
 .progress__button{
   height: 100%;
-  width: 8%;
+  width: 9%;
   position: relative;
   align-items: center;
   display: flex;
@@ -113,7 +113,7 @@ body{
 }
 .progress__shortText{
   height: 100%;
-  width: 8%;
+  width: 9%;
   position: relative;
   align-items: center;
   display: flex;
