@@ -21,13 +21,13 @@
   color: #11557a;
   text-align: center;
 }
-.price_title{
+.price__title{
     font-size: 32px;
     font-family:Nunito;
     margin-bottom: 10px;
 }
-.price_description{
-    font-size: 18px;
+.price__description{
+    color: "#d5e3e9";
 }
 @font-face {
   font-family: "Nunito";
