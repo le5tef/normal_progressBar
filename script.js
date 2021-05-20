@@ -1,4 +1,19 @@
 var pos = 1;
+const currWidth = window.screen.width;
+console.log(currWidth);
+if (currWidth < 400) {
+    var lastScrollTop = 0;
+    $(document).on("scroll", function () {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            counter(pos + 1);
+        }
+        else {
+            counter(pos - 1);
+        }
+        lastScrollTop = st;
+    });
+}
 var isRunning = 0;
 function counter(a) {
     if (isRunning) { return }
