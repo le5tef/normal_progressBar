@@ -11,14 +11,14 @@
         <div class="progress__body">
             <div class="progress__buttons">
                 <div class="progress__button">
-                    <div onclick="counter(1)" class="progress__icon progress__button_start">
+                    <div onclick="counter(1)" class="progress__icon progress__icon_1 progress__button_start">
                         1</div>
                     <div class="progress__bar ">
                         <span style="height: 6px;" class="progress__bar_control progress__bar_start"></span>
                     </div>
                 </div>
                 <div class="progress__button">
-                    <div onclick="counter(2)" class="progress__icon ">
+                    <div onclick="counter(2)" class="progress__icon progress__icon_2">
 
                         2</div>
                     <div class="progress__bar ">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="progress__button">
-                    <div onclick="counter(3)" class="progress__icon ">
+                    <div onclick="counter(3)" class="progress__icon progress__icon_3">
 
                         3</div>
                     <div class="progress__bar ">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="progress__button">
-                    <div onclick="counter(4)" class="progress__icon ">
+                    <div onclick="counter(4)" class="progress__icon progress__icon_4">
 
                         4</div>
                     <div class="progress__bar ">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="progress__button">
-                    <div onclick="counter(5)" class="progress__icon ">
+                    <div onclick="counter(5)" class="progress__icon progress__icon_5">
                         5
                     </div>
                     <div class="progress__bar ">
@@ -104,3 +104,19 @@
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>
+<script>
+    const currWidth = window.screen.width;
+    if (currWidth < 400) {
+        var lastScrollTop = 0;
+        $(document).on("scroll", function () {
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+                counter(pos + 1);
+            }
+            else {
+                counter(pos - 1);
+            }
+            lastScrollTop = st;
+        });
+    }
+</script>

@@ -44,4 +44,5 @@ function counter(a) {
     btns[pos - 1].style.backgroundColor = "#37b2ed";
     btns[pos - 1].style.color = "aliceblue";
     blocks[pos - 1].style.display = "flex";
+    console.log(pos);
 };

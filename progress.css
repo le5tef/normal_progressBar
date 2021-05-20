@@ -1,12 +1,13 @@
 body{
   background-color: #96cee4;
+  height: 120%;
 }
 .wrapper {
   height: 100vh;
   width: 100vw;
 }
 .progress__bar{
-  top: 50%;
+  top: 65%;
   transform: translateY(-150%);
   position: absolute;
   display: flex;
